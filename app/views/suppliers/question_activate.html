@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Activate your account
+      </h1>
+      <br>
+      <p class="padding-bottom-small">An email has been sent to {{data["question-login"]}}.</p>
+      <p class="padding-bottom-small">You must click on the link in the email to activate your supplier and contributor accounts.</p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

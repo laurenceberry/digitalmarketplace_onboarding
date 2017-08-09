@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-one-whole">
+      <form action="/suppliers/question_activate/content" method="post" class="form">
+
+        <h1 class="heading-large">
+          Check your information
+        </h1>
+        <br>
+
+        <div class="form-group">
+          <fieldset>
+
+            <div class="company-information-summary">
+
+              <h2 class="summary-item-heading">
+                  
+                  Company details
+              </h2>
+              <table class="summary-item-body">
+                <caption class="visuallyhidden">
+                  Summary table with content field as list
+                </caption>
+                <thead class="summary-item-field-headings">
+                  <tr>
+                    <th scope="col" class="summary-item-field-heading-first">
+                      <span class="visuallyhidden">Field name</span>
+                    </th>
+                    <th scope="col" class="summary-item-field-heading">
+                      <span class="visuallyhidden">Field value</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="summary-item-row">
+                    <td class="summary-item-field-first">                
+                      <span>DUNS number</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-duns"]}}</span>
+                    </td>
+                    
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/duns-number">Edit</a></span>
+                    </td>
+                  </tr>
+
+                  <tr class="summary-item-row">
+                    <td class="summary-item-field-first">
+                      <span>Companies House number</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-companies_house"]}}</span>
+                    </td>
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/companies-house-number">Edit</a></span>
+                    </td>
+                  </tr>
+                  <tr class="summary-item-row">
+                    <td class="summary-item-field-first">
+                      <span>Company name</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-company_name"]}}</span>
+                    </td>
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/company-name">Edit</a></span>
+                    </td>
+                  </tr>
+                  <tr class="summary-item-row">            
+                    <td class="summary-item-field-first">
+                      <span>Contact name</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-company_contact_name"]}}</span>
+                    </td>
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/company-contact-details">Edit</a></span>
+                    </td>
+                  </tr>
+                  <tr class="summary-item-row">
+                    <td class="summary-item-field-first">
+                      <span>Contact email</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-company_contact_email"]}}</span>
+                    </td>
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/company-contact-details">Edit</a></span>
+                    </td>
+                  </tr>
+                  <tr class="summary-item-row">
+                    <td class="summary-item-field-first">
+                      <span>Contact phone number</span>
+                    </td>
+                    <td class="summary-item-field">
+                      <span>{{data["question-company_contact_phone"]}}</span>                
+                    </td>
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/company-contact-details">Edit</a></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+              <h2 class="summary-item-heading">
+                Contributor account details
+              </h2>
+              <table class="summary-item-body">
+                <caption class="visuallyhidden">
+                  Summary table with content field as list
+                </caption>
+                <thead class="summary-item-field-headings">
+                  <tr>
+                    <th scope="col" class="summary-item-field-heading-first">
+                      <span class="visuallyhidden">Field name</span>
+                    </th>
+                    <th scope="col" class="summary-item-field-heading">
+                      <span class="visuallyhidden">Field value</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="summary-item-row">              
+                    <td class="summary-item-field-first">
+                      <span>Email address</span>
+                    </td>
+                
+                    <td class="summary-item-field">
+                      <span>{{data["question-login"]}}</span>
+                    </td>
+                
+                    <td class="summary-item-field-with-action">
+                      <span><a href="/suppliers/create-your-account">Edit</a></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
+            <input type="submit" class="button-save" value="Create account">
+          </fieldset>
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

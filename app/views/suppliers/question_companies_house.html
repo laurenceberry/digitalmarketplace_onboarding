@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/suppliers/question_company_name/content" method="post" class="form">
+
+        <h1 class="heading-large">
+          Companies House number (optional)
+        </h1>
+        <br>
+        <p class="padding-bottomm">
+          <a href="https://beta.companieshouse.gov.uk/">Find your Companies House number</a>
+        </p>
+        <div class="form-group">
+          <fieldset>
+
+
+          <div class="question" id="question-companies_house">
+                
+                <input
+                  type="text"
+                  name="question-companies_house"
+                  id="question-companies_house"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+
+          <input type="submit" class="button-save" value="Continue">
+          <a href="javascript:history.back();">Previous page</a>
+
+          </fieldset>
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

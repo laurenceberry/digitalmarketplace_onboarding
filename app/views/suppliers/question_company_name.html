@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/suppliers/question_company_contact/content" method="post" class="form">
+
+        <h1 class="heading-large">
+          Company name
+        </h1>
+        <br>
+        <p class="padding-bottom">This is how buyers will see your company’s name on the Digital Marketplace.</p>
+
+        <div class="form-group">
+          <fieldset>
+
+
+          <div class="question" id="question-company_name">
+                
+                <input
+                  type="text"
+                  name="question-company_name"
+                  id="question-company_name"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+          <input type="submit" class="button-save" value="Continue">
+          <a href="javascript:history.back();">Previous page</a>
+          </fieldset>
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/suppliers/question_create_login/content" method="post" class="form">
+
+        <h1 class="heading-large">
+          Company contact details
+        </h1>
+        <br>
+        <p class="padding-bottom-small">This information will be visible on the Digital Marketplace.</p>
+        <p class="padding-bottom">You can change it at any time.</p>
+
+        <div class="form-group">
+          <fieldset>
+
+
+          <div class="question" id="question-company_contact_name">
+              <label for="question-company_contact_name">
+                <span class="question-heading">
+                  
+                  Contact name
+                  
+                </span>
+                
+              </label>
+                
+                <input
+                  type="text"
+                  name="question-company_contact_name"
+                  id="question-company_contact_name"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+
+          <div class="question" id="question-company_contact_email">
+              <label for="question-company_contact_email">
+                <span class="question-heading">
+                  
+                  Contact email address
+                  
+                </span>
+                
+              </label>
+                
+                <input
+                  type="text"
+                  name="question-company_contact_email"
+                  id="question-company_contact_email"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+
+
+          <div class="question" id="question-company_contact_phone">
+              <label for="question-company_contact_phone">
+                <span class="question-heading">
+                  
+                  Contact phone number
+                  
+                </span>
+                
+              </label>
+                
+                <input
+                  type="text"
+                  name="question-company_contact_phone"
+                  id="question-company_contact_phone"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+          <input type="submit" class="button-save" value="Continue">
+          <a href="javascript:history.back();">Previous page</a>
+          </fieldset>
+        </div> 
+      </form>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

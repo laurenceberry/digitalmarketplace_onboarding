@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/suppliers/question_companies_house/content" method="post" class="form">
+
+        <h1 class="heading-large">
+          DUNS number
+        </h1>
+        <br>
+        <p class="padding-bottom">The Digital Marketplace uses your head office’s 9‑digit DUNS number to see if you’re already a supplier.</p>
+        <a href="https://www.dnb.co.uk/duns-number/lookup.html">Find your DUNS number</a>.
+        <div class="padding-bottom"></div>
+        <p>If you do not have one already, you will need to <a href="https://www.dnb.co.uk/duns-number/lookup/request-a-duns-number.html">apply for a DUNS number</a> before you can create a supplier account.</p>
+        <div class="padding-bottom-small"></div>
+        <div class="form-group">
+          <fieldset>
+
+
+            <div class="question" id="question-duns">
+              <label for="question-duns">
+              </label>
+                
+                <input
+                  type="text"
+                  name="question-duns"
+                  id="question-duns"
+                  class="text-box"
+                  value=""
+                />
+                
+            </div>
+
+            <input type="submit" class="button-save" value="Continue">
+            <a href="javascript:history.back();">Previous page</a>
+
+          </div>
+        </fieldset>
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
