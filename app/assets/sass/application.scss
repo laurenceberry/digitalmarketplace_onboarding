@@ -54,3 +54,15 @@ $path: "/public/images/";
 .padding-bottom-small{
   padding-bottom: 10px;
 }
+
+a:visited{
+  color: #005ea5;
+}
+
+a:hover{
+  color: lighten(#005ea5, 10%);
+}
+
+strong{
+  font-weight: bold;
+}

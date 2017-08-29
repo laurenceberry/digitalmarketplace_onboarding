@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Digital Marketplace
+{% endblock %}
+
+
+{% block content %}
+
+        
+
+    
+
+  <div id="wrapper">
+<main id="content" role="main">
+      
+  
+
+      
+
+
+
+
+  <header class="page-heading page-heading-without-breadcrumb"><h1>
+    Log in to the Digital Marketplace
+  </h1>
+</header>
+
+
+<form autocomplete="off" action="/login" method="POST">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="##1bff122315c610d954df9edb9fec36bef4d60166"></div>
+
+            
+                <div class="question" id="email_address">
+                    <label class="question-heading" for="input_email_address">Email address</label>
+                    <p class="hint">
+                        Enter the email address you used to register with the Digital Marketplace
+                    </p>
+                    
+                    <input autocomplete="off" class="text-box" id="input_email_address" name="email_address" type="text" value="">
+                </div>
+            
+
+            
+                <div class="question" id="password">
+                    <label class="question-heading" for="input_password">Password</label>
+                    
+                    <input autocomplete="off" class="text-box" id="input_password" name="password" type="password" value="">
+                </div>
+            
+
+            
+              <div class="secondary-action-link">
+  <a href="/reset-password">Forgotten password</a>
+</div>
+            
+
+            
+              <input type="submit" class="button-save" value="Log in">
+            
+
+            
+            <div class="secondary-action-link-bigger">
+              <a href="/buyers/create">Create a buyer account</a>
+              <div class="padding-bottom-small"></div>
+              <a href="/suppliers/sell">Become a supplier</a>
+
+</div>
+            
+
+        </div>
+    </div>
+</form>
+
+    </main>
+</div>
+
+{% endblock %}
