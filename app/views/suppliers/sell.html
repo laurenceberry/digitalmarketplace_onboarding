@@ -6,6 +6,8 @@
 
 {% block content %}
 
+
+
 <main id="content" role="main">
 
   <div class="breadcrumbs">
@@ -15,15 +17,36 @@
   </div>
 
   <div class="banner-temporary-message-without-action">
-    <h2>
-      Applications are closed at the moment
-    </h2>
-    <p class="banner-message">
-      Once applications open it’ll take about 10 mins to create a supplier account. <br><br>
-      <a href="/suppliers/subscribe/content">Sign up to find out when applications will open</a>.
+      
+     {% if state == “open_shut” %}
 
-    </p>
-  </div>
+      <h2>
+    
+      The X framework is now open for applications. 
+
+
+      The y framework is still shut.
+
+      </h2>
+
+      <p class="banner-message">
+       </p>
+     
+    {% elif state == “both_closed” %}
+ 
+       <h2>
+
+       Applications are closed at the moment
+
+       </h2>
+      <p class="banner-message"></p>
+        Once applications open it’ll take about 10 mins to create a supplier account. <br><br>
+       <a href="/suppliers/subscribe/content">Sign up to find out when applications will open</a>.
+    
+    {% else %}
+      <h2>other</h2>
+    {% endif %}
+      </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
