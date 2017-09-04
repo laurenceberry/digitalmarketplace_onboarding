@@ -5,6 +5,20 @@
 {% endblock %}
 
 {% block content %}
+{% set any_open = "false" %}
+{% set any_closed = "false" %}
+
+{% for framework in frameworks %}
+  {% if framework.framework in coming_open %}
+    {% set any_open = "true" %}
+  {% endif %}
+{% endfor %} 
+
+{% for framework in frameworks %}
+  {% if framework.framework in pending_closed %}
+    {% set any_closed = "true" %}
+  {% endif %}
+{% endfor %} 
 
 
 
@@ -16,73 +30,49 @@
     </ol>
   </div>
 
-  <div class="banner-temporary-message-without-action">
-      
-     {% if state == “open_shut” %}
-
-      <h2>
-    
-      The X framework is now open for applications. 
-
-
-      The y framework is still shut.
-
-      </h2>
-
-      <p class="banner-message">
-       </p>
-     
-    {% elif state == “both_closed” %}
- 
-       <h2>
-
-       Applications are closed at the moment
-
-       </h2>
-      <p class="banner-message"></p>
-        Once applications open it’ll take about 10 mins to create a supplier account. <br><br>
-       <a href="/suppliers/subscribe/content">Sign up to find out when applications will open</a>.
-    
-    {% else %}
-      <h2>other</h2>
-    {% endif %}
-      </div>
-
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">
-        Sell your services on the Digital Marketplace
-      </h1><br>
-
-      <h2 class="heading-small padding-bottom-small">What you can sell</h2>
-
-      <p>
-        <ul class="list-bullet">
-          <li>cloud hosting, software or support</li>
-          <li>digital outcomes, for example a team</li>
-          <li>digital specialists, for example an individual developer or user researcher</li>
-          <li>user research studios</li>
-          <li>user research participants</li>
-
-        </ul>
-      </p>
-      <div class="padding-bottom-small"></div>
-      <p>Read the <a href="">Digital Marketplace suppliers' guide</a> for more information.</p>
-      <div class="padding-bottom-small"></div>
-      <h2 class="heading-small padding-bottom-small">How to sell your services</h2>
-      <p class="padding-bottom-small">Before you can apply to start selling your services you need to create a supplier account.</p>
-
-      <p class="padding-bottom-small">You can create a supplier account at any time.</p>
-
-      <p class="">You can only apply to sell your services when the Digital Marketplace is accepting applications.</p>
-            
-      <div class="secondary-action-link-bigger">
+    <h1 class="heading-large padding-bottom">Become a supplier</h1>
+      {% if any_open == "true" %}
+        <p">You can apply to sell:
+          <ul class="list-bullet">
+            {% for framework in frameworks %}
+              {% if framework.framework in coming_open %}
+                {% for lot in framework.lots %}
+                  <li>{{ lot.lot }}</li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}  
+          </ul>
+        </p>
+        <div class="padding-bottom-small"></div>
         <a href="/suppliers/start/content">Create a supplier account</a>
-      </div>
-      <!-- <p class="padding-bottom"><a href="">Sign up to find out when applications will open</a></p> -->
+      {% endif %}
+      
+      {% if any_closed == "true" %}
+        {% if any_open == "true" %}
+          <h2 class="heading-medium">If you can’t supply anything at the moment</h2>
+        {% else %}
+          <h2 class="heading-medium">You can’t supply anything at the moment while applications are closed.</h2>
+        {% endif %}
+        <p>You can <a href="/suppliers/subscribe/content">sign up for emails</a> to find out when applications open for:
+          <ul class="list-bullet">
+            {% for framework in frameworks %}
+              {% if framework.framework in pending_closed %}
+                {% for lot in framework.lots %}
+                  <li>{{ lot.lot }}</li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}  
+          </ul>
+        </p>
+        <div class="padding-bottom-small"></div>
+        <p>It’ll take about 10 minutes to create a supplier account once applications are open.</p>
+      {% endif %}
 
     </div>
   </div>
+
 </main>
 
 {% endblock %}
