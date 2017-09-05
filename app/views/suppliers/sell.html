@@ -51,11 +51,11 @@
       
       {% if any_closed == "true" %}
         {% if any_open == "true" %}
-          <h2 class="heading-medium">If you can’t supply anything at the moment</h2>
+          <h2 class="heading-medium">Services you can't apply to sell at the moment</h2>
         {% else %}
-          <h2 class="heading-medium">You can’t supply anything at the moment while applications are closed.</h2>
+          <h2 class="heading-medium">You can’t apply to sell anything at the moment.</h2>
         {% endif %}
-        <p>You can <a href="/suppliers/subscribe/content">sign up for emails</a> to find out when applications open for:
+        <p>Applications are closed for:
           <ul class="list-bullet">
             {% for framework in frameworks %}
               {% if framework.framework in pending_closed %}
@@ -65,9 +65,10 @@
               {% endif %}
             {% endfor %}  
           </ul>
+          <div class="padding-bottom-small"></div>
+          <a href="/suppliers/subscribe/content">Get notifications when applications are opening</a>
         </p>
-        <div class="padding-bottom-small"></div>
-        <p>It’ll take about 10 minutes to create a supplier account once applications are open.</p>
+        <div class="padding-bottom"></div>
       {% endif %}
 
     </div>
