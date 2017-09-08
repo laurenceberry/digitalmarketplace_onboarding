@@ -1,14 +1,14 @@
 frameworks:
-  - framework: dos2
-    name: G-Cloud 10
+  - framework: dos
+    name: Digital Outcomes and Specialists
     lots:
       - lot: digital outcomes, for example a team to build a service
       - lot: digital specialists, for example an individual developer or user researcher
       - lot: user research studios
       - lot: user research participants
 
-  - framework: gcloud10
-    name: G-Cloud 11
+  - framework: gcloud
+    name: G-Cloud
     lots:
       - lot: cloud hosting
       - lot: software

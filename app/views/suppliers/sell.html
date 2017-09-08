@@ -32,20 +32,25 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-    <h1 class="heading-large padding-bottom">Become a supplier</h1>
+    <h1 class="heading-large">Become a supplier</h1>
       {% if any_open == "true" %}
-        <p">You can apply to sell:
-          <ul class="list-bullet">
-            {% for framework in frameworks %}
-              {% if framework.framework in coming_open %}
+        <h2 class="heading-medium">Services you can apply to sell</h2>     
+        {% for framework in frameworks %}
+          {% if framework.framework in coming_open %}
+            <p>
+            Applications are open for '{{ framework.name }}'.<br>
+            You can apply to sell:
+              <ul class="list-bullet">
                 {% for lot in framework.lots %}
                   <li>{{ lot.lot }}</li>
                 {% endfor %}
-              {% endif %}
-            {% endfor %}  
-          </ul>
-        </p>
-        <div class="padding-bottom-small"></div>
+              </ul>
+            </p>
+            <div class="padding-bottom"></div>
+          {% endif %}
+        {% endfor %}  
+        
+        
         <a href="/suppliers/start/content">Create a supplier account</a>
       {% endif %}
       
@@ -55,20 +60,27 @@
         {% else %}
           <h2 class="heading-medium">You can’t apply to sell anything at the moment.</h2>
         {% endif %}
-        <p>Applications are closed for:
-          <ul class="list-bullet">
-            {% for framework in frameworks %}
-              {% if framework.framework in pending_closed %}
+
+        {% for framework in frameworks %}
+          {% if framework.framework in pending_closed %}
+            <p>
+            Applications are closed for '{{ framework.name }}'.<br>
+            You will be able to sell:
+              <ul class="list-bullet">
                 {% for lot in framework.lots %}
                   <li>{{ lot.lot }}</li>
                 {% endfor %}
-              {% endif %}
-            {% endfor %}  
-          </ul>
-          <div class="padding-bottom-small"></div>
-          <a href="/suppliers/subscribe/content">Get notifications when applications are opening</a>
-        </p>
-        <div class="padding-bottom"></div>
+              </ul>
+            </p>
+<!--             <div class="padding-bottom-small"></div>
+            <p>
+              Applications are expected to open in Autumn 2018.
+            </p> -->
+            <div class="padding-bottom"></div>
+          {% endif %}
+        {% endfor %}  
+        
+        <a href="/suppliers/subscribe/content">Get notifications when applications are opening</a>          
       {% endif %}
 
     </div>
