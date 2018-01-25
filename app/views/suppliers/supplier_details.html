@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+    <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+      <li><a href="/suppliers/sell">Become a supplier</a></li>
+      <li><a href="/suppliers/start">Create an account</a></li>
+    </ol>
+  </div>
+      
+
+  <header class="page-heading-smaller page-heading-without-breadcrumb"><h1>
+    Supplier details
+  </h1>
+</header>
+
+
+
+<p class="summary-item-top-level-action">
+    <a href="/suppliers/public_info" class="summary-change-link">Edit</a>
+  </p>
+<table class="summary-item-body">
+    <caption class="visually-hidden">
+      Supplier details
+    </caption>
+    <thead class="summary-item-field-headings">
+      <tr>
+        
+          <th scope="col" class="summary-item-field-heading-first">
+            
+              <span class="visually-hidden">Label</span>
+            
+          </th>
+        
+          <th scope="col" class="summary-item-field-heading">
+            
+              <span class="visually-hidden">Value</span>
+            
+          </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Contact name</span>
+        </td>
+        <td class="summary-item-field">
+          <span>{{data["question-company_contact_name"]}}</span>
+        </td>
+        {% if data["question-org"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Contact email</span>
+        </td>
+        <td class="summary-item-field">
+          <span>{{data["question-company_contact_email"]}}</span>
+        </td>
+        {% if data["question-org"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Contact phone number</span>
+        </td>
+        <td class="summary-item-field">
+          <span>{{data["question-company_contact_phone"]}}</span>
+        </td>
+        {% if data["question-org"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>summary</span>
+        </td>
+        <td class="summary-item-field">
+          <span>{{data["question-summary"]}}</span>
+        </td>
+        <td class="summary-item-field-with-action">
+          <span class="hint" style="font-size: 16px; margin: 0; padding: 0;">Optional</span>
+        </td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Organisation size</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org_size"] %}
+            <span>{{data["question-org_size"]}}</span>
+          {% else %}
+            <a href="/suppliers/public_info#question-orgsize">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="summary-item-heading" id="registration_information">
+    Registration information
+  </h2>
+  <p class="summary-item-description">
+    This is used to process your applications and manage your participation on frameworks.
+  </p>
+  <table class="summary-item-body">
+    <caption class="visually-hidden">
+      Registration information
+    </caption>
+    <thead class="summary-item-field-headings">
+      <tr>
+        <th scope="col" class="summary-item-field-heading-first">
+          <span class="visually-hidden">Label</span>
+        </th>
+        <th scope="col" class="summary-item-field-heading">
+          <span class="visually-hidden">Value</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Registered company name</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Registration number</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Registration country</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Registered company address</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        {% if data["question-org"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>VAT number</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>DUNS number</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Trading status</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org"] %}
+            <span>{{data["question-org"]}}</span>
+          {% else %}
+            <a href="/suppliers/duns-number">Answer required</a></span>
+          {% endif %}
+        </td>
+        {% if data["question-org"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      </tr>
+    </tbody>
+  </table>
+
+    </main>
+
+{% endblock %}
