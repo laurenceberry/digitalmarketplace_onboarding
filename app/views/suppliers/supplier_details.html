@@ -19,13 +19,13 @@
       
 
   <header class="page-heading-smaller page-heading-without-breadcrumb"><h1>
-    Supplier details
+    Company details
   </h1>
 </header>
 
 
   <h2 class="summary-item-heading" id="registration_information">
-    Information for buyers
+    What buyers will see
   </h2>
 <p class="summary-item-top-level-action">
     <a href="/suppliers/public_info" class="summary-change-link">Edit</a>
@@ -113,7 +113,7 @@
   </table>
 
   <h2 class="summary-item-heading" id="registration_information">
-    Information for applying to a framework
+    Buyers won't see this information
   </h2>
 <!--   <p class="summary-item-description">
     This is used to process your applications and manage your participation on frameworks.
@@ -167,7 +167,7 @@
       </tr>
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
-          <span>Registration number</span>
+          <span>Companies house or other registration number</span>
         </td>
         <td class="summary-item-field">
           {% if data["question-registration-number"] %}
@@ -231,7 +231,7 @@
       </tr>
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
-          <span>VAT number</span>
+          <span>VAT number (if you have one)</span>
         </td>
         <td class="summary-item-field">
           {% if data["question-vat"] %}
