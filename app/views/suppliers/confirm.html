@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main">
+      
+    <div class="breadcrumbs">
+    <ol>
+      <li><a href=".index">Digital Marketplace</a></li>
+      <li><a href="/suppliers/sell">Become a supplier</a></li>
+      <li><a href="/suppliers/start">Create an account</a></li>
+    </ol>
+  </div>
+
+      
+
+
+
+
+
+
+  <header class="page-heading-smaller page-heading-with-context page-heading-without-breadcrumb"><p class="context">
+      laurence.berry+1@digital.cabinet-office.gov.uk
+    </p><h1>
+    Add your name and create a password
+  </h1>
+</header>
+
+
+
+    <form autocomplete="off" action="/suppliers/account">
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="##35c9c669d07d2ccc732ed8e193efb86319581d6c"></div>
+
+                
+                    <div class="question" id="name">
+                        <label class="question-heading" for="input_name">Your name</label>
+                        
+                        <input autocomplete="off" class="text-box" id="input_name" name="name" type="text" value="">
+                    </div>
+                    
+
+                
+
+                
+                    <div class="question" id="password">
+                        <label class="question-heading" for="input_password">Password</label>
+                        <p class="hint">
+                          Must be between 10 and 50 characters
+                        </p>
+                        
+                        <input autocomplete="off" class="text-box" id="input_password" name="password" type="password" value="">
+                    </div>
+                
+
+            
+              <input type="submit" class="button-save" value="Create account">
+            
+            </div>
+        </div>
+    </form>
+
+
+    </main>
+
+{% endblock %}
+
+
