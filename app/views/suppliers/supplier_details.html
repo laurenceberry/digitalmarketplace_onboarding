@@ -24,7 +24,9 @@
 </header>
 
 
-
+  <h2 class="summary-item-heading" id="registration_information">
+    Information for buyers
+  </h2>
 <p class="summary-item-top-level-action">
     <a href="/suppliers/public_info" class="summary-change-link">Edit</a>
   </p>
@@ -107,28 +109,15 @@
           <span class="hint" style="font-size: 16px; margin: 0; padding: 0;">Optional</span>
         </td>
       </tr>
-      <tr class="summary-item-row">
-        <td class="summary-item-field-first">                
-          <span>Organisation size</span>
-        </td>
-        <td class="summary-item-field">
-          {% if data["question-org_size"] %}
-            <span>{{data["question-org_size"]}}</span>
-          {% else %}
-            <a href="/suppliers/public_info#question-orgsize">Answer required</a></span>
-          {% endif %}
-        </td>
-        <td></td>
-      </tr>
     </tbody>
   </table>
 
   <h2 class="summary-item-heading" id="registration_information">
-    Registration information
+    Information for applying to a framework
   </h2>
-  <p class="summary-item-description">
+<!--   <p class="summary-item-description">
     This is used to process your applications and manage your participation on frameworks.
-  </p>
+  </p> -->
   <table class="summary-item-body">
     <caption class="visually-hidden">
       Registration information
@@ -144,34 +133,52 @@
       </tr>
     </thead>
     <tbody>
-
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
           <span>Registered company name</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
+          {% if data["question-registered-company-name"] %}
+            <span>{{data["question-registered-company-name"]}}</span>
           {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
+            <a href="/suppliers/question_registered_company_name">Answer required</a></span>
           {% endif %}
         </td>
         <td></td>
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
+          <span>Registered company address</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-registered-company-address"] %}
+            <span>{{data["question-registered-company-address"]}}</span>
+          {% else %}
+            <a href="/suppliers/question_registered_company_address">Answer required</a></span>
+          {% endif %}
+        </td>
+        {% if data["question-registered-company-address"] %}
+          <td class="summary-item-field-with-action">
+            <a href="">Edit</a>
+          </td>
+        {% else %}
+          <td></td>
+        {% endif %}
       </tr>
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
           <span>Registration number</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
+          {% if data["question-registration-number"] %}
+            <span>{{data["question-registration-number"]}}</span>
           {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
+            <a href="/suppliers/question_registration_number">Answer required</a></span>
           {% endif %}
         </td>
         <td></td>
       </tr>
-      <tr class="summary-item-row">
+<!--       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
           <span>Registration country</span>
         </td>
@@ -183,19 +190,19 @@
           {% endif %}
         </td>
         <td></td>
-      </tr>
+      </tr> -->
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
-          <span>Registered company address</span>
+          <span>Trading status</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
+          {% if data["question-trading-status"] %}
+            <span>{{data["question-trading-status"]}}</span>
           {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
+            <a href="/suppliers/question_trading_status">Answer required</a></span>
           {% endif %}
         </td>
-        {% if data["question-org"] %}
+        {% if data["question-trading-status"] %}
           <td class="summary-item-field-with-action">
             <a href="">Edit</a>
           </td>
@@ -205,13 +212,32 @@
       </tr>
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
+          <span>Organisation size</span>
+        </td>
+        <td class="summary-item-field">
+          {% if data["question-org_size"] %}
+            <span>{{data["question-org_size"]}}</span>
+          {% else %}
+            <a href="/suppliers/question_org_size">Answer required</a></span>
+          {% endif %}
+        </td>
+          {% if data["question-org_size"] %}
+            <td class="summary-item-field-with-action">
+              <a href="/suppliers/public_info#question-orgsize">Edit</a>
+            </td>
+          {% else %}
+            <td></td>
+          {% endif %}
+      </tr>
+      <tr class="summary-item-row">
+        <td class="summary-item-field-first">                
           <span>VAT number</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
+          {% if data["question-vat"] %}
+            <span>{{data["question-vat"]}}</span>
           {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
+            <a href="/suppliers/question_vat_number">Answer required</a></span>
           {% endif %}
         </td>
         <td></td>
@@ -221,36 +247,14 @@
           <span>DUNS number</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
-          {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
-          {% endif %}
+          <span>{{data["question-duns"]}}</span>
         </td>
         <td></td>
       </tr>
-      <tr class="summary-item-row">
-        <td class="summary-item-field-first">                
-          <span>Trading status</span>
-        </td>
-        <td class="summary-item-field">
-          {% if data["question-org"] %}
-            <span>{{data["question-org"]}}</span>
-          {% else %}
-            <a href="/suppliers/duns-number">Answer required</a></span>
-          {% endif %}
-        </td>
-        {% if data["question-org"] %}
-          <td class="summary-item-field-with-action">
-            <a href="">Edit</a>
-          </td>
-        {% else %}
-          <td></td>
-        {% endif %}
-      </tr>
     </tbody>
   </table>
-
+    <br>
+    <a href="/suppliers/application">Return to your Digital Outcomes and Specialists 3 application</a>
     </main>
 
 {% endblock %}

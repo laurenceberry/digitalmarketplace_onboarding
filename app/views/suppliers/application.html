@@ -34,9 +34,6 @@
       </aside>
 
 
-
-      
-
       <li class="browse-list-item">
         
           <a class="browse-list-item-link" href="/suppliers/supplier_details">
@@ -46,11 +43,17 @@
         <p class="browse-list-item-body">
           Confirm your company details and registration information.
         </p>
-        
-        <div class="browse-list-item-status-quiet">
-          <p class="browse-list-item-status-title">You need to complete your supplier account</p>
-        </div>
-        
+        {% if data['complete'] == "true" %}
+          <div class="browse-list-item-status-happy">
+            <p class="browse-list-item-status-title">
+              <strong>Complete</strong>
+            </p>
+          </div>
+        {% else %}
+          <div class="browse-list-item-status-quiet">
+            <p class="browse-list-item-status-title">You need to complete your supplier account</p>
+          </div>
+        {% endif %}
       </li>
 
       <li class="browse-list-item">
