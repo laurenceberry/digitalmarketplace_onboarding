@@ -21,25 +21,33 @@
       <form action="/suppliers/question_registration_number" method="post" class="form">
 
         <h1 class="heading-large">
-          What is your registered company address?
+          What is your registered office address?
         </h1>
         <br>
 
         <div class="form-group">
           <fieldset>
+            <div class="question">
+                    
+              <input type="hidden" class="text-box" name="contact_id" id="contact_id-input" value="{{data['contact_id']}}">
+                    
+                    <div class="box-label" id="address1-label">Building and street</div>
+                    
+              <input type="text" class="text-box" name="contact_address1" id="contact_address1-input" value="{{data['contact_address1']}}">
+                    
+                    <div class="box-label" id="city-label">Town or city</div>
+                    
+              <input type="text" class="text-box" name="contact_city" id="contact_city-input" value="{{data['contact_city']}}">
+                    
+                    <div class="box-label" id="postcode-label">Postcode</div>
+                    
+              <input type="text" class="text-box" name="contact_postcode" id="contact_postcode-input" value="{{data['contact_postcode']}}">
 
+                    <div class="box-label" id="postcode-label">Country</div>
 
-          <div class="question" id="question-registered-company-address">
-                
-                <input
-                  type="text"
-                  name="question-registered-company-address"
-                  id="question-registered-company-address"
-                  class="text-box"
-                  value="{{data['question-registered-company-address']}}"
-                />
-                
-            </div>
+              <input type="text" class="text-box" name="contact_country" id="contact_postcode-input" value="{{data['contact_country']}}">
+                  </div>
+
 
           <input type="submit" class="button-save" value="Save and continue">
           <a href="/suppliers/supplier_details">Return to overview</a>

@@ -26,29 +26,29 @@
         <br>
         <p class="padding-bottom">Enter your VAT number if you have one or leave this box blank if you don't.</p>
 
-        <div class="form-group">
-          <fieldset>
 
 
-          <div class="question" id="question-vat">
-                
-                <input
-                  type="text"
-                  name="question-vat"
-                  id="question-vat"
-                  class="text-box"
-                  value="{{data['question-vat']}}"
-                />
+          <div class="form-group">
+            <fieldset>
 
-                <input
-                  type="text"
-                  name="complete"
-                  id="complete"
-                  class="text-box visually-hidden"
-                  value="true"
-                />
-                
-            </div>
+              <div class="multiple-choice" data-target="yes-vat">
+                <input id="companies-house" type="radio" name="question-vat" value="Yes">
+                <label for="companies-house">Yes</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="yes-vat">
+                <label class="form-label" for="question-registration-number">What is your VAT number</label>
+                <input class="form-control" name="question-vat-number" type="text" id="one">
+              </div>
+
+              <div class="multiple-choice" data-target="">
+                <input id="other" type="radio" name="question-vat" value="N/A">
+                <label for="other">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+
 
           <input type="submit" class="button-save" value="Save and continue">
           <a href="/suppliers/supplier_details">Return to overview</a>

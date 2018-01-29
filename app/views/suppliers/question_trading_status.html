@@ -28,71 +28,80 @@
         <div class="form-group">
           <fieldset>
 
-      <div class="multiple-choice">
-        <input id="UK" type="radio" name="public limited company" value="public">
-        <label for="UK">public limited company</label>
-      </div>
+        <div class="multiple-choice">
+          <input id="UK" type="radio" name="question-trading-status" value="public limited company">
+          <label for="UK">public limited company</label>
+        </div>
 
-      
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="limited company" value="limited company">
-        <label for="other">limited company</label>
-      </div>
-      
+        
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="limited company">
+          <label for="other">limited company</label>
+        </div>
+        
 
-       <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="limited liability company" value="No">
-        <label for="other">limited liability company</label>
-      </div>
-      
-      <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="limited company" value="No">
-        <label for="limited liability partnership">limited liability partnership</label>
-      </div>
-      
-
-      <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="other partnership" value="other partnership">
-        <label for="other">other partnership</label>
-      </div>
-     
-
-      <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="sole trader" value="sole trader">
-        <label for="other">sole trader</label>
-      </div>
-      
-
-      <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="established consortium" value="No">
-        <label for="other">established consortium</label>
-      </div>
-     
-
-       <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="to-be-formed consortium" value="No">
-        <label for="other">to-be-formed consortium</label>
-      </div>
-    
+         <div class="padding-bottom"></div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="limited liability company">
+          <label for="other">limited liability company</label>
+        </div>
+        
+        <div class="padding-bottom"></div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="No">
+          <label for="limited liability partnership">limited liability partnership</label>
+        </div>
+        
 
         <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="special purpose vehicle" value="No">
-        <label for="other">special purpose vehicle</label>
-      </div>
-    
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="other partnership">
+          <label for="other">other partnership</label>
+        </div>
+       
 
         <div class="padding-bottom"></div>
-      <div class="multiple-choice">
-        <input id="other" type="radio" name="limited company" value="No">
-        <label for="other">other<label/>
-      </div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="sole trader">
+          <label for="other">sole trader</label>
+        </div>
+        
+
+        <div class="padding-bottom"></div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="established consortium">
+          <label for="other">established consortium</label>
+        </div>
+       
+
+         <div class="padding-bottom"></div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="to-be-formed consortium">
+          <label for="other">to-be-formed consortium</label>
+        </div>
+      
+
+          <div class="padding-bottom"></div>
+        <div class="multiple-choice">
+          <input id="other" type="radio" name="question-trading-status" value="special purpose vehicle">
+          <label for="other">special purpose vehicle</label>
+        </div>
+      
+
+          <div class="padding-bottom"></div>
+
+        <div class="multiple-choice" data-target="other-registration">
+          <input id="other" type="radio" name="question-trading-status" value="Other">
+          <label for="other">other</label>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="other-registration">
+          <label class="form-label" for="question-trading-status-other">Provide details</label>
+          <textarea class="form-control" name="question-trading-status-other" type="text" id="one" value="{{data['question-trading-status-other']}}"></textarea>
+        </div>
+
+
+
       </form>
 
 <fieldset>

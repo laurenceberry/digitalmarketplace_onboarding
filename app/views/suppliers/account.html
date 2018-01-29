@@ -55,15 +55,13 @@
 
       </div>
 
-
-  <h3 class="heading-xmedium">G-Cloud 9</h3>
-  <p>
-  
-    
-    <a href="/suppliers/frameworks/g-cloud-9/services">View services</a><br>
-    <a href="/suppliers/frameworks/g-cloud-9">View documents and ask a question</a>
-  
-  </p>
+      {% if data["existing"] == "true" %}
+        <h3 class="heading-xmedium">G-Cloud 9</h3>
+        <p>
+          <a href="/suppliers/frameworks/g-cloud-9/services">View services</a><br>
+          <a href="/suppliers/frameworks/g-cloud-9">View documents and ask a question</a>
+        </p>
+      {% endif %}
 
 
     </div>

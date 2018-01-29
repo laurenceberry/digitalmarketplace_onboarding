@@ -151,13 +151,18 @@
           <span>Registered company address</span>
         </td>
         <td class="summary-item-field">
-          {% if data["question-registered-company-address"] %}
-            <span>{{data["question-registered-company-address"]}}</span>
+          {% if data["contact_address1"] %}
+            <span>
+              {{data['contact_address1']}}<br>
+              {{data['contact_city']}}<br>
+              {{data['contact_postcode']}}<br>
+              {{data['contact_country']}}
+            </span>
           {% else %}
             <a href="/suppliers/question_registered_company_address">Answer required</a></span>
           {% endif %}
         </td>
-        {% if data["question-registered-company-address"] %}
+        {% if data["contact_address1"] %}
           <td class="summary-item-field-with-action">
             <a href="">Edit</a>
           </td>
@@ -235,7 +240,13 @@
         </td>
         <td class="summary-item-field">
           {% if data["question-vat"] %}
-            <span>{{data["question-vat"]}}</span>
+            <span>
+              {% if data["question-vat"] == "N/A" %}
+               {{data["question-vat"]}}
+              {% else %}
+                {{data["question-vat-number"]}}
+              {% endif %}
+            </span>
           {% else %}
             <a href="/suppliers/question_vat_number">Answer required</a></span>
           {% endif %}
@@ -253,6 +264,9 @@
       </tr>
     </tbody>
   </table>
+    <br>
+      <a href="/suppliers/applicatio" class="button-save">Mark as complete</a>
+
     <br>
     <a href="/suppliers/application">Return to your Digital Outcomes and Specialists 3 application</a>
     </main>

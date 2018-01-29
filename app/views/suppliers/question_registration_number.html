@@ -25,37 +25,42 @@
         </h1>
         <br>
 
-        <form>
-        <div class="form-group">
-         <fieldset>
+          <div class="form-group">
+            <fieldset>
 
-      <div class="multiple-choice" data-target="question-registration-number">
-        <input id="companies-house" type="radio" name="Companies house" value="Yes">
-        <label for="companies-house">Yes</label>
-      </div>
-      <div class="panel panel-border-narrow js-hidden" id="companies-house">
-        <label class="form-label" for="contact-email">Companies House number</label>
-        <input class="form-control" name="contact-email" type="text" id="contact-email">
-      </div>
+              <div class="multiple-choice" data-target="ch-registration">
+                <input id="companies-house" type="radio" name="question-registration-number" value="Yes">
+                <label for="companies-house">Yes</label>
+              </div>
 
-      <div class="multiple-choice" data-target="question-registration-number">
-        <input id="other" type="radio" name="radio-contact-group" value="No">
-        <label for="other">No</label>
-      </div>
-      <div class="panel panel-border-narrow js-hidden" id="other">
-        <label class="form-label" for="contact-phone">Organisation registration number</label>
-        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
-      </div>
+              <div class="panel panel-border-narrow js-hidden" id="ch-registration">
+                <label class="form-label" for="question-registration-number">What is your companies House number</label>
+                <input class="form-control" name="question-registration-number" type="text" id="one">
+              </div>
 
-    </fieldset>
-  </div>
-</form>
+              <div class="multiple-choice" data-target="other-registration">
+                <input id="other" type="radio" name="question-registration-number" value="No">
+                <label for="other">No</label>
+              </div>
 
-<input type="submit" class="button-save" value="Save and continue">
-          <a href="/suppliers/supplier_details">Return to overview</a>
-         
-        </div>
+              <div class="panel panel-border-narrow js-hidden" id="other-registration">
+                <p>might need guidance here</p>
+                <label class="form-label" for="question-registration-number">What is your registration number</label>
+                <input class="form-control" name="question-registration-number" type="text" id="one">
+              </div>
+            </fieldset>
+          </div>
+
+
+        <input type="submit" class="button-save" value="Save and continue">
+        <a href="/suppliers/supplier_details">Return to overview</a>
       </form>
+
+
+    </div>
+  </div>
+</main>
+
 
 {% endblock %}
 
