@@ -21,38 +21,41 @@
       <form action="/suppliers/question_trading_status" method="post" class="form">
 
         <h1 class="heading-large">
-          What is your registration number?
+          Are you registered with Companies House?
         </h1>
         <br>
-        <p class="padding-bottom">This could be your Companies House number, your unique tax reference (UTR) or any other number you received when you registered your business.</p>
 
+        <form>
         <div class="form-group">
-          <fieldset>
+         <fieldset>
 
+      <div class="multiple-choice" data-target="question-registration-number">
+        <input id="companies-house" type="radio" name="Companies house" value="Yes">
+        <label for="companies-house">Yes</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="companies-house">
+        <label class="form-label" for="contact-email">Companies House number</label>
+        <input class="form-control" name="contact-email" type="text" id="contact-email">
+      </div>
 
-          <div class="question" id="question-registration-number">
-                
-                <input
-                  type="text"
-                  name="question-registration-number"
-                  id="question-registration-number"
-                  class="text-box"
-                  value="{{data['question-registeration-number']}}"
-                />
-                
-            </div>
+      <div class="multiple-choice" data-target="question-registration-number">
+        <input id="other" type="radio" name="radio-contact-group" value="No">
+        <label for="other">No</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="other">
+        <label class="form-label" for="contact-phone">Organisation registration number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+      </div>
 
-          <input type="submit" class="button-save" value="Save and continue">
+    </fieldset>
+  </div>
+</form>
+
+<input type="submit" class="button-save" value="Save and continue">
           <a href="/suppliers/supplier_details">Return to overview</a>
-          </fieldset>
+         
         </div>
       </form>
-
-
-
-    </div>
-  </div>
-</main>
 
 {% endblock %}
 
