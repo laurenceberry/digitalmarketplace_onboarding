@@ -21,27 +21,34 @@
       <form action="/suppliers/question_vat_number" method="post" class="form">
 
         <h1 class="heading-large">
-          Registered company name
+          What is the size of your organisation?
         </h1>
-        <br>
-        <p class="padding-bottom">test</p>
 
         <div class="form-group">
-          <fieldset>
+      
+      <fieldset>
 
+      <div class="multiple-choice">
+        <input id="UK" type="radio" name="public limited company" value="public">
+        <label for="UK">micro</label>
+      </div>
 
-          <div class="question" id="question-trading-status">
-                
-                <input
-                  type="text"
-                  name="question-trading-status"
-                  id="question-trading-status"
-                  class="text-box"
-                  value="{{data['question-trading-status']}}"
-                />
-                
-            </div>
+      <div class="multiple-choice">
+        <input id="UK" type="radio" name="public limited company" value="public">
+        <label for="UK">small</label>
+      </div>
 
+      <div class="multiple-choice">
+        <input id="UK" type="radio" name="public limited company" value="public">
+        <label for="UK">medium</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input id="UK" type="radio" name="public limited company" value="public">
+        <label for="UK">large</label>
+      </div>
+
+      </fieldset>
           <input type="submit" class="button-save" value="Save and continue">
           <a href="/suppliers/supplier_details">Return to overview</a>
           </fieldset>
