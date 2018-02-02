@@ -10,15 +10,22 @@
 
   <div class="breadcrumbs">
     <ol>
-      <li><a href="/index">Digital Marketplace</a></li>
-      <li><a href="/suppliers/sell">Become a supplier</a></li>
-      <li><a href="/suppliers/start">Create an account</a></li>
+      <li><a href="/">Digital Marketplace</a></li>
+      <li><a href="/suppliers/account">Your account</a></li>
+      <li><a href="/suppliers/application">Your Digital Outcomes and Specialists 3 application</a></li>
+      <li><a href="/suppliers/supplier_details">Company details</a></li>
     </ol>
   </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="/suppliers/supplier_details" method="post" class="form">
+
+      {% if data['edit6'] == "true" %}
+        <form action="/suppliers/supplier_details" method="post" class="form">
+      {% else %}
+        <form action="/suppliers/supplier_details" method="post" class="form">
+      {% endif %}
+
 
         <h1 class="heading-large">
           Are you registered for VAT?

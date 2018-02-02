@@ -10,15 +10,20 @@
 
   <div class="breadcrumbs">
     <ol>
-      <li><a href="/index">Digital Marketplace</a></li>
-      <li><a href="/suppliers/sell">Become a supplier</a></li>
-      <li><a href="/suppliers/start">Create an account</a></li>
+      <li><a href="/">Digital Marketplace</a></li>
+      <li><a href="/suppliers/account">Your account</a></li>
+      <li><a href="/suppliers/application">Your Digital Outcomes and Specialists 3 application</a></li>
+      <li><a href="/suppliers/supplier_details">Company details</a></li>
     </ol>
   </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="/suppliers/question_registration_number" method="post" class="form">
+      {% if data['edit2'] == "true" %}
+        <form action="/suppliers/supplier_details" method="post" class="form">
+      {% else %}
+        <form action="/suppliers/question_registration_number" method="post" class="form">
+      {% endif %}
 
         <h1 class="heading-large">
           What is your registered office address?
@@ -30,20 +35,19 @@
             <div class="question">
                     
               <input type="hidden" class="text-box" name="contact_id" id="contact_id-input" value="{{data['contact_id']}}">
-                    
-                    <div class="box-label" id="address1-label">Building and street</div>
+                    <div class="box-label question-heading" id="address1-label">Building and street</div>
                     
               <input type="text" class="text-box" name="contact_address1" id="contact_address1-input" value="{{data['contact_address1']}}">
-                    
-                    <div class="box-label" id="city-label">Town or city</div>
+              <br>      
+                    <div class="box-label question-heading" id="city-label">Town or city</div>
                     
               <input type="text" class="text-box" name="contact_city" id="contact_city-input" value="{{data['contact_city']}}">
-                    
-                    <div class="box-label" id="postcode-label">Postcode</div>
+              <br>     
+                    <div class="box-label question-heading" id="postcode-label">Postcode</div>
                     
               <input type="text" class="text-box" name="contact_postcode" id="contact_postcode-input" value="{{data['contact_postcode']}}">
-
-                    <div class="box-label" id="postcode-label">Country</div>
+              <br>
+                    <div class="box-label question-heading" id="postcode-label">Country</div>
 
               <input type="text" class="text-box" name="contact_country" id="contact_postcode-input" value="{{data['contact_country']}}">
                   </div>

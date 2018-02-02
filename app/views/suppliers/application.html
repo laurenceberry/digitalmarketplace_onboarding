@@ -10,11 +10,10 @@
 
 <main id="content" role="main">
 
-    <div class="breadcrumbs">
+  <div class="breadcrumbs">
     <ol>
-      <li><a href=".index">Digital Marketplace</a></li>
-      <li><a href="/suppliers/sell">Become a supplier</a></li>
-      <li><a href="/suppliers/start">Create an account</a></li>
+      <li><a href="/">Digital Marketplace</a></li>
+      <li><a href="/suppliers/account">Your account</a></li>
     </ol>
   </div>
 
@@ -35,18 +34,23 @@
 
 
       <li class="browse-list-item">
-        
+        {% if data['returning-user'] == "true" %}
+          <a class="browse-list-item-link" href="/suppliers/supplier_details">
+          <span>Review your company details</span>
+          </a>
+        {% else %}
           <a class="browse-list-item-link" href="/suppliers/supplier_details">
           <span>Enter your company details</span>
           </a>
+        {% endif %}
         
-        {% if data['complete'] == "true" %}
+        {% if data['completed'] == "true" %}
           <div class="browse-list-item-status-happy">
             <p class="browse-list-item-status-title">
               <strong>Your company details were saved</strong>
             </p>
           </div>
-        {% else %}
+        {% elif data['completed'] != "true" and data['returning-user'] != "true" %}
           <div class="browse-list-item-status-quiet">
             <p class="browse-list-item-status-title">Add your organisation's details to your supplier account</p>
           </div>
@@ -69,31 +73,29 @@
         
       </li>
 
-<li class="browse-list-item">
-  <a class="browse-list-item-link" href="/suppliers/frameworks/g-cloud-10/submissions">
-    <span>Add, edit and complete services</span>
-  </a>
-  
-    <div class="browse-list-item-body">
-      <p>The service information you provide here:</p>
-<ul>
-<li>will be public</li>
-<li>may be used as filters</li>
-<li>will appear on your service description page</li>
-<li>should help buyers review and compare services</li>
-</ul>
-    </div>
-  
-  
-  <div class="browse-list-item-status-quiet">
-    <p class="browse-list-item-status-title">You need to add and complete services</p>
-  </div>
-  
+      <li class="browse-list-item">
+        <a class="browse-list-item-link" href="/suppliers/frameworks/g-cloud-10/submissions">
+          <span>Add, edit and complete services</span>
+        </a>
+      
+        <div class="browse-list-item-body">
+          <p>The service information you provide here:</p>
+          <ul class="list-bullet">
+            <li>will be public</li>
+            <li>may be used as filters</li>
+            <li>will appear on your service description page</li>
+            <li>should help buyers review and compare services</li>
+          </ul>
+        </div>
 
-  
+      
+        <div class="browse-list-item-status-quiet">
+          <p class="browse-list-item-status-title">You need to add and complete services</p>
+        </div>
+        
+      </li>
 
-  
-</li>
+      <br>
 
       
       
