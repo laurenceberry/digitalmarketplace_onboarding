@@ -229,7 +229,7 @@
 
       <tr class="summary-item-row">
         <td class="summary-item-field-first">                
-          <span>VAT number (if you have one)</span>
+          <span>VAT number</span>
         </td>
         <td class="summary-item-field">
           {% if data["question-vat"] %}
@@ -247,6 +247,10 @@
         {% if data["question-vat"] and data["completed"] != "true" and data['returning-user'] != "true" %}
           <td class="summary-item-field-with-action">
             <a href="/suppliers/question_vat_number?edit6=true">Edit</a>
+          </td>
+        {% elif data["question-vat"] and data["completed"] == "true" %}
+          <td class="summary-item-field-with-action">
+            <a href="/suppliers/cant_edit?page=VAT number">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -270,7 +274,6 @@
 
         <br>
         <p>Contact <a href="#">cloud_digital@crowncommercial.gov.uk</a> to make changes to your:</p>
-        <br>
           <ul class="list-bullet">
             <li>registered company name</li>
             <li>registration number</li>
@@ -296,7 +299,6 @@
           <p>
             Once you confirm this information, you'll have to contact support to edit your:
           </p>
-          <br></br>
           <ul class="list-bullet">
             <li>registered company name</li>
             <li>registration number</li>
@@ -312,7 +314,6 @@
         <br><br>
       {% endif %}
 
-      
       <a href="/suppliers/application">Return to your Digital Outcomes and Specialists 3 application</a>
         </div>
       </div>
