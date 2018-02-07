@@ -39,8 +39,9 @@
               </div>
 
               <div class="panel panel-border-narrow js-hidden" id="ch-registration">
-                <label class="form-label" for="question-registration-number"><a href="https://beta.companieshouse.gov.uk/search/companies">Find</a> and enter your 8 digit Companies House number</label>
+                <label class="form-label" for="question-registration-number">Companies House number</label>
                 <input class="form-control" name="question-registration-number-answer-1" type="text" id="one">
+                <span class="hint"><a href="https://beta.companieshouse.gov.uk/search/companies">Find your 8 digit Companies House number</a></span>
               </div>
 
               <div class="multiple-choice" data-target="other-registration">
@@ -49,9 +50,15 @@
               </div>
 
               <div class="panel panel-border-narrow js-hidden" id="other-registration">
-                <label class="form-label" for="question-registration-number">Enter a number that can be used to identify your business, this could be your unique tax reference (UTR) if you're a sole trader </label>
+                <label class="form-label" for="question-registration-number">Enter a number that can be used to identify your business</label>
                 <input class="form-control" name="question-registration-number-answer-2" type="text" id="one">
+                <br><br>
+                <label class="form-label" for="question-registration-number-detail">What is this number? For example, 'French Central Exchange Registration number'</label>
+                <textarea class="form-control" name="question-registration-number-answer-3" type="text" id="one"></textarea>
+                <!-- <p class="hint">If your business was not established in the UK check that your organisation complies with <a href="http://www.legislation.gov.uk/uksi/2015/102/regulation/58/made" target="_blank" rel="noopener noreferrer">Schedule 5, Regulation 58(5) (link opens in a new tab)</a> of the Public Contracts Regulations 2015.</p> -->
               </div>
+
+
             </fieldset>
           </div>
 
