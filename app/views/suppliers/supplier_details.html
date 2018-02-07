@@ -256,7 +256,7 @@
           <td class="summary-item-field-with-action">
             <a href="/suppliers/question_vat_number?edit6=true">Change</a>
           </td>
-        {% elif data["question-vat"] and data["completed"] == "true" %}
+        {% elif data["question-vat"] and data["completed"] == "true" or data['returning-user'] == "true" %}
           <td class="summary-item-field-with-action">
             <a href="/suppliers/cant_edit?page=VAT number">Change</a>
           </td>
