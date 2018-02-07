@@ -129,7 +129,11 @@
         </td>
         {% if data["question-registered-company-name"] and data["completed"] != "true" and data['returning-user'] != "true" %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_registered_company_name?edit1=true">Edit</a>
+            <a href="/suppliers/question_registered_company_name?edit1=true">Change</a>
+          </td>
+        {% elif data["question-registered-company-name"] and data["completed"] == "true" or data['returning-user'] == "true" %}
+          <td class="summary-item-field-with-action">
+            <a href="/suppliers/cant_edit?page=registered company name">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -154,7 +158,7 @@
         </td>
         {% if data["contact_address1"] %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_registered_company_address?edit2=true">Edit</a>
+            <a href="/suppliers/question_registered_company_address?edit2=true">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -180,7 +184,11 @@
         </td>
         {% if data["question-registration-number"] and data["completed"] != "true" and data['returning-user'] != "true" %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_registration_number?edit3=true">Edit</a>
+            <a href="/suppliers/question_registration_number?edit3=true">Change</a>
+          </td>
+        {% elif data["question-registration-number"] and data["completed"] == "true" or data['returning-user'] == "true" %}
+          <td class="summary-item-field-with-action">
+            <a href="/suppliers/cant_edit?page=company registration number">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -200,7 +208,7 @@
         </td>
         {% if data["question-trading-status"] %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_trading_status?edit4=true">Edit</a>
+            <a href="/suppliers/question_trading_status?edit4=true">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -220,7 +228,7 @@
         </td>
         {% if data["question-org_size"] %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_org_size?edit5=true">Edit</a>
+            <a href="/suppliers/question_org_size?edit5=true">Change</a>
           </td>
         {% else %}
           <td></td>
@@ -246,7 +254,7 @@
         </td>
         {% if data["question-vat"] and data["completed"] != "true" and data['returning-user'] != "true" %}
           <td class="summary-item-field-with-action">
-            <a href="/suppliers/question_vat_number?edit6=true">Edit</a>
+            <a href="/suppliers/question_vat_number?edit6=true">Change</a>
           </td>
         {% elif data["question-vat"] and data["completed"] == "true" %}
           <td class="summary-item-field-with-action">
@@ -264,7 +272,9 @@
         <td class="summary-item-field">
           <span>{{data["question-duns"]}}</span>
         </td>
-        <td></td>
+        <td class="summary-item-field-with-action">
+          <a href="/suppliers/cant_edit?page=DUNS number">Change</a>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -272,15 +282,7 @@
     <div class="column-two-thirds">
       {% if data['completed'] or data['returning-user'] == "true" %}
 
-        <br>
-        <p>Contact <a href="#">cloud_digital@crowncommercial.gov.uk</a> to make changes to your:</p>
-          <ul class="list-bullet">
-            <li>registered company name</li>
-            <li>registration number</li>
-            <li>VAT number</li>
-            <li>DUNS number</li>
-          </ul>
-        <br><br>
+      <br>
 
       {% elif data["question-vat"] and data["question-org_size"] and data["question-trading-status"] and data["question-registration-number"] and data["contact_address1"] and data["question-registered-company-name"] and data["returning-user"] != "true" %}
 
