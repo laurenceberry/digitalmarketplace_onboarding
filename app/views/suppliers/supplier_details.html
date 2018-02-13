@@ -243,9 +243,9 @@
           {% if data["question-vat"] %}
             <span>
               {% if data["question-vat"] == "N/A" %}
-               {{data["question-vat"]}}
+               Not VAT registered
               {% else %}
-                {{data["question-vat-number"]}}
+                {{data["question-vat-number"]}}s
               {% endif %}
             </span>
           {% else %}
